@@ -1,0 +1,43 @@
+import { useEffect, useState } from "react";
+import servies from "../Appwrite/Conf";
+import { Container, PostCard } from "../Components/Index";
+import ClipLoader from "react-spinners/ClipLoader";
+function AllPost() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const color = "#ffffff";
+  useEffect(() => {
+    setLoading(true);
+    servies.getposts([]).then((posts) => {
+      if (posts) {
+        setPosts(posts.documents);
+      }
+    });
+    setLoading(false);
+  }, []);
+
+  return (
+    <div className="w-full py-8">
+      <Container>
+        {loading && (
+          <ClipLoader
+            color={color}
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        )}
+        <div className="flex flex-wrap">
+          {posts.map((post) => (
+            <div className="p-2 w-1/4" key={post.$id}>
+              <PostCard {...post} />
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+}
+
+export default AllPost;
