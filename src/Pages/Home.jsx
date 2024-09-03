@@ -7,7 +7,7 @@ import Hometext from "../Components/hometext";
 function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const color = "#ffffff";
+  const color = "#000000";
 
   useEffect(() => {
     setLoading(true);

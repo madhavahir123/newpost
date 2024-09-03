@@ -11,7 +11,7 @@ function Homepost(props) {
             <ClipLoader
               color={props.color}
               loading={props.loading}
-              size={150}
+              size={70}
               aria-label="Loading Spinner"
               data-testid="loader"
             />

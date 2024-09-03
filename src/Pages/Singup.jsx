@@ -20,7 +20,7 @@ function Signup() {
   } = useForm();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const color = "#ffffff";
+  const color = "#000000";
 
   const signup = async (data) => {
     setLoading(true);
@@ -57,7 +57,7 @@ function Signup() {
           <ClipLoader
             color={color}
             loading={loading}
-            size={150}
+            size={70}
             aria-label="Loading Spinner"
             data-testid="loader"
           />

@@ -10,7 +10,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 function Post() {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(false);
-  const color = "#ffffff";
+  const color = "#000000";
 
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ function Post() {
         <ClipLoader
           color={color}
           loading={loading}
-          size={150}
+          size={70}
           aria-label="Loading Spinner"
           data-testid="loader"
         />

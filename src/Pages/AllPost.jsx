@@ -5,7 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 function AllPost() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const color = "#ffffff";
+  const color = "#000000";
   useEffect(() => {
     setLoading(true);
     servies.getposts([]).then((posts) => {
@@ -23,7 +23,7 @@ function AllPost() {
           <ClipLoader
             color={color}
             loading={loading}
-            size={150}
+            size={70}
             aria-label="Loading Spinner"
             data-testid="loader"
           />
