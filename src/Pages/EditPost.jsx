@@ -26,13 +26,15 @@ function EditPost() {
     <div className="py-8">
       <Container>
         {loading && (
-          <ClipLoader
-            color={color}
-            loading={loading}
-            size={70}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+          <div className="flex justify-center">
+            <ClipLoader
+              color={color}
+              loading={loading}
+              size={70}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
         )}
         <PostForm post={posts} />
       </Container>

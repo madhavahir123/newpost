@@ -24,7 +24,7 @@ function PostForm({ post }) {
       },
     });
   const [loading, setLoading] = useState(false);
-  const color = "#ffffff";
+  const color = "#000000";
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
@@ -96,13 +96,15 @@ function PostForm({ post }) {
   return (
     <>
       {loading && (
-        <ClipLoader
-          color={color}
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+        <div className="flex justify-center">
+          <ClipLoader
+            color={color}
+            loading={loading}
+            size={70}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
       )}
       <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
         <div className="w-2/3 px-2">

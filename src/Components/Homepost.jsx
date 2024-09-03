@@ -8,13 +8,15 @@ function Homepost(props) {
       <div className="w-full py-8">
         <Container>
           {props.loading && (
-            <ClipLoader
-              color={props.color}
-              loading={props.loading}
-              size={70}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
+            <div className="flex justify-center">
+              <ClipLoader
+                color={props.color}
+                loading={props.loading}
+                size={70}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </div>
           )}
           <div className="flex flex-wrap">
             {props.posts?.map((post) => {

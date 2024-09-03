@@ -54,13 +54,15 @@ function Signup() {
     <>
       <div className="p-8">
         {loading && (
-          <ClipLoader
-            color={color}
-            loading={loading}
-            size={70}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+          <div className="flex justify-center">
+            <ClipLoader
+              color={color}
+              loading={loading}
+              size={70}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
         )}
         <div className="flex items-center justify-center">
           <div className="mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10">
@@ -129,7 +131,7 @@ function Signup() {
                     {errors.password.message}
                   </p>
                 )}
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={loading}>
                   Create Account
                 </Button>
               </div>
