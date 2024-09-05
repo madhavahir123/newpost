@@ -124,6 +124,10 @@ function Signup() {
                   type="password"
                   {...register("password", {
                     required: "Password is required ",
+                    validate: {
+                      matchPattern: (value) =>
+                        /^[]  /.test(value) || "passWord is 7 chekter long",
+                    },
                   })}
                 />
                 {errors.password && (

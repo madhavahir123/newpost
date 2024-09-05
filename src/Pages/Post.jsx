@@ -20,6 +20,7 @@ function Post() {
   const isAuthor = post && userdata ? post.userid === userdata.$id : false;
 
   useEffect(() => {
+    setLoading(true);
     if (slug) {
       servies
         .getPost(slug)
@@ -33,10 +34,10 @@ function Post() {
     } else {
       navigate("/");
     }
+    setLoading(false);
   }, [slug, navigate]);
 
   const deletePost = () => {
-    setLoading(true);
     servies.deletepost(post.$id).then((status) => {
       if (status) {
         servies.deleteFile(post.featureimg);
@@ -44,7 +45,6 @@ function Post() {
         navigate("/");
       }
     });
-    setLoading(false);
   };
 
   return (
